@@ -1,4 +1,5 @@
 import 'package:chatgpt_clone/constants/constants.dart';
+import 'package:chatgpt_clone/widgets/drop_down.dart';
 import 'package:chatgpt_clone/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -12,12 +13,16 @@ class Services {
           return const Padding(
             padding: EdgeInsets.all(18.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Flexible(
                   child: TextWidget(
                     label: "Choose model:",
                     fontSize: 16,
                   ),
+                ),
+                Flexible(
+                  child: ModelsDropDownWidget(),
                 ),
               ],
             ),
