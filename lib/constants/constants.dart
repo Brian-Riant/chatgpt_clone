@@ -1,8 +1,8 @@
 import 'package:chatgpt_clone/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
-Color scaffoldBackgroundColor = const Color(0xFF6A4E8E);
-Color cardColor = const Color(0xFF7C5EAB);
+Color scaffoldBackgroundColor = const Color(0xFF343541);
+Color cardColor = const Color(0xFF444654);
 
 List<String> models = [
   'Model1',
