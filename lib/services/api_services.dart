@@ -36,4 +36,8 @@ class ApiServices {
       rethrow;
     }
   }
+
+  static sendMessage({required String message, required String modelId}) {}
+
+  static sendMessageGPT({required String message, required String modelId}) {}
 }

@@ -115,7 +115,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             } catch (error) {
                               print("error $error");
                             }
-                          };
+                          }
                         },
                         icon: const Icon(
                           Icons.send,
