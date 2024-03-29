@@ -8,21 +8,21 @@ import 'package:provider/provider.dart';
 
 
 
-class ModelsDropDownWidget extends StatefulWidget {
-  const ModelsDropDownWidget({super.key});
+class ModelsDrowDownWidget extends StatefulWidget {
+  const ModelsDrowDownWidget({super.key});
 
   @override
-  State<ModelsDropDownWidget> createState() => _ModelsDropDownWidgetState();
+  State<ModelsDrowDownWidget> createState() => _ModelsDrowDownWidgetState();
 }
 
-class _ModelsDropDownWidgetState extends State<ModelsDropDownWidget> {
+class _ModelsDrowDownWidgetState extends State<ModelsDrowDownWidget> {
   //initialise current model
-  String currentModel = "text-davinci-003";
+  String? currentModel;
 
   bool isFirstLoading = true;
   @override
   Widget build(BuildContext context) {
-final modelsProvider = Provider.of<ModelsProvider>(context, listen: false);
+    final modelsProvider = Provider.of<ModelsProvider>(context, listen: false);
     currentModel = modelsProvider.getCurrentModel;
     return FutureBuilder<List<ModelsModel>>(
         future: modelsProvider.getAllModels(),

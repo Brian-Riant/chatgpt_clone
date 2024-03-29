@@ -4,9 +4,13 @@ import 'package:chatgpt_clone/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class Services {
-  // You pass the context as a required argument
-  static Future<void> showModelSheet({required BuildContext context}) async {
+  static Future<void> showModalSheet({required BuildContext context}) async {
     await showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(20),
+          ),
+        ),
         backgroundColor: scaffoldBackgroundColor,
         context: context,
         builder: (context) {
@@ -17,13 +21,11 @@ class Services {
               children: [
                 Flexible(
                   child: TextWidget(
-                    label: "Choose model:",
+                    label: "Chosen Model:",
                     fontSize: 16,
                   ),
                 ),
-                Flexible(
-                  child: ModelsDropDownWidget(),
-                ),
+                Flexible(flex: 2, child: ModelsDrowDownWidget()),
               ],
             ),
           );

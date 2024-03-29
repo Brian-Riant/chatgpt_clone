@@ -4,7 +4,7 @@ import 'package:chatgpt_clone/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class ChatWidget extends StatelessWidget {
-  const ChatWidget({super.key, required this.msg, required this.chatIndex});
+  const ChatWidget({super.key, required this.msg, required this.chatIndex, required bool shouldAnimate});
 
   // import the dummy json messages by innitializing the constants
   final String msg;
