@@ -19,9 +19,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-            create: (_) => ModelsProvider()), // Provide ModelsProvider
+          create: (_) => ModelsProvider(),
+        ), // Provide ModelsProvider
         ChangeNotifierProvider(
-            create: (_) => ChatProvider()), // Provide ChatProvider
+          create: (_) => ChatProvider(),
+        ), // Provide ChatProvider
       ],
       child: const MaterialApp(
         title: 'My App',
@@ -60,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
     focusNode.dispose();
     super.dispose();
   }
-  
+
   // List<ChatModel>chatList = [];
 
   @override
@@ -74,14 +76,16 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(Assetmanager.openaiLogo),
         ),
-        title: const Text("ChatGPT", style: TextStyle(color: Colors.white),),
+        title: const Text(
+          "ChatGPT",
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
             onPressed: () async {
               await Services.showModalSheet(context: context);
             },
-            icon: const Icon(
-              Icons.more_vert_rounded, color: Colors.white),
+            icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
           ),
         ],
       ),
@@ -127,8 +131,9 @@ class _ChatScreenState extends State<ChatScreen> {
                               chatProvider: chatProvider);
                         },
                         decoration: const InputDecoration.collapsed(
-                            hintText: "How can I help you",
-                            hintStyle: TextStyle(color: Colors.grey)),
+                          hintText: "How can I help you",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
                       ),
                     ),
                     IconButton(
@@ -166,7 +171,10 @@ class _ChatScreenState extends State<ChatScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: TextWidget(
-            label: "You can't send multiple messages at a time", position: Align(alignment: Alignment.topCenter,),
+            label: "You can't send multiple messages at a time",
+            position: Align(
+              alignment: Alignment.topCenter,
+            ),
           ),
           backgroundColor: Colors.red,
         ),
@@ -177,7 +185,10 @@ class _ChatScreenState extends State<ChatScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: TextWidget(
-            label: "Please type a message", position: Align(alignment: Alignment.topCenter,),
+            label: "Please type a message",
+            position: Align(
+              alignment: Alignment.topCenter,
+            ),
           ),
           backgroundColor: Colors.red,
         ),
@@ -200,15 +211,20 @@ class _ChatScreenState extends State<ChatScreen> {
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: TextWidget(
-          label: error.toString(), position: const Align(alignment: Alignment.topCenter,),
+          label: error.toString(),
+          position: const Align(
+            alignment: Alignment.topCenter,
+          ),
         ),
         backgroundColor: Colors.red,
       ));
     } finally {
-      setState(() {
-        scrollListToEND();
-        _isTyping = false;
-      });
+      setState(
+        () {
+          scrollListToEND();
+          _isTyping = false;
+        },
+      );
     }
   }
 }

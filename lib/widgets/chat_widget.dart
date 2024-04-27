@@ -45,7 +45,12 @@ class ChatWidget extends StatelessWidget {
                 // use of the text widget made earier
                 Expanded(
                   child: chatIndex == 0
-                      ? TextWidget(label: msg, position: const Align(alignment: Alignment.center,),)
+                      ? TextWidget(
+                          label: msg,
+                          position: const Align(
+                            alignment: Alignment.center,
+                          ),
+                        )
                       : shouldAnimate
                           ? DefaultTextStyle(
                               style: const TextStyle(
@@ -53,15 +58,16 @@ class ChatWidget extends StatelessWidget {
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16),
                               child: AnimatedTextKit(
-                                  isRepeatingAnimation: false,
-                                  repeatForever: false,
-                                  displayFullTextOnTap: true,
-                                  totalRepeatCount: 1,
-                                  animatedTexts: [
-                                    TyperAnimatedText(
-                                      msg.trim(),
-                                    ),
-                                  ]),
+                                isRepeatingAnimation: false,
+                                repeatForever: false,
+                                displayFullTextOnTap: true,
+                                totalRepeatCount: 1,
+                                animatedTexts: [
+                                  TyperAnimatedText(
+                                    msg.trim(),
+                                  ),
+                                ],
+                              ),
                             )
                           : Text(
                               msg.trim(),
