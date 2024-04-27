@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:chatgpt_clone/constants/constants.dart';
-import 'package:chatgpt_clone/models/chat_model.dart';
 import 'package:chatgpt_clone/providers/models_provider.dart';
 import 'package:chatgpt_clone/providers/chats_provider.dart';
 import 'package:chatgpt_clone/services/assets_manager.dart';
@@ -75,7 +74,7 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(Assetmanager.openaiLogo),
         ),
-        title: const Text("ChatGPT"),
+        title: const Text("ChatGPT", style: TextStyle(color: Colors.white),),
         actions: [
           IconButton(
             onPressed: () async {
@@ -167,7 +166,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: TextWidget(
-            label: "You cant send multiple messages at a time",
+            label: "You can't send multiple messages at a time", position: Align(alignment: Alignment.topCenter,),
           ),
           backgroundColor: Colors.red,
         ),
@@ -178,7 +177,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: TextWidget(
-            label: "Please type a message",
+            label: "Please type a message", position: Align(alignment: Alignment.topCenter,),
           ),
           backgroundColor: Colors.red,
         ),
@@ -198,9 +197,10 @@ class _ChatScreenState extends State<ChatScreen> {
       setState(() {});
     } catch (error) {
       log("error $error");
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: TextWidget(
-          label: error.toString(),
+          label: error.toString(), position: const Align(alignment: Alignment.topCenter,),
         ),
         backgroundColor: Colors.red,
       ));

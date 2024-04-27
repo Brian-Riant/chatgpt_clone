@@ -45,7 +45,7 @@ class ChatWidget extends StatelessWidget {
                 // use of the text widget made earier
                 Expanded(
                   child: chatIndex == 0
-                      ? TextWidget(label: msg)
+                      ? TextWidget(label: msg, position: const Align(alignment: Alignment.center,),)
                       : shouldAnimate
                           ? DefaultTextStyle(
                               style: const TextStyle(

@@ -39,7 +39,7 @@ class _ModelsDrowDownWidgetState extends State<ModelsDrowDownWidget> {
         }
         if (snapshot.hasError) {
           return Center(
-            child: TextWidget(label: snapshot.error.toString()),
+            child: TextWidget(label: snapshot.error.toString(), position: const Align(alignment: Alignment.topCenter,),),
           );
         }
         return snapshot.data == null || snapshot.data!.isEmpty
@@ -54,7 +54,7 @@ class _ModelsDrowDownWidgetState extends State<ModelsDrowDownWidget> {
                     value: snapshot.data![index].id,
                     child: TextWidget(
                       label: snapshot.data![index].id,
-                      fontSize: 15,
+                      fontSize: 15, position: const Align(alignment: Alignment.bottomRight,),
                     ),
                   )
                 ),

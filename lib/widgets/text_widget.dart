@@ -6,7 +6,7 @@ class TextWidget extends StatelessWidget {
       required this.label,
       this.fontSize = 18,
       this.color,
-      this.fontWeight});
+      this.fontWeight, required Align position});
 
   final String label;
   final double fontSize;

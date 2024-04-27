@@ -22,7 +22,7 @@ class Services {
                 Flexible(
                   child: TextWidget(
                     label: "Chosen Model:",
-                    fontSize: 16,
+                    fontSize: 16, position:Align(alignment: Alignment.bottomLeft,),
                   ),
                 ),
                 Flexible(flex: 2, child: ModelsDrowDownWidget()),
